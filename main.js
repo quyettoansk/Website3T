@@ -237,5 +237,64 @@
         $('.js-list').fadeIn();
     });
     
+    $(window).on('load', function () {
 
+        if ($('.testimonials-one__thumb-carousel').length) {
+            var testiOneThumbCarousel = new Swiper('.testimonials-one__thumb-carousel', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                freeMode: true,
+                effect: 'fade',
+                speed: 1400,
+                watchSlidesVisibility: true,
+                watchSlidesProgress: true,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                },
+            });
+        }
+
+
+        if ($('.testimonials-one__carousel').length) {
+            var testiOneCarousel = new Swiper('.testimonials-one__carousel', {
+                observer: true,
+                observeParents: true,
+                speed: 1400,
+                mousewheel: false,
+                autoplay: {
+                    delay: 5000,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                thumbs: {
+                    swiper: testiOneThumbCarousel
+                }
+            });
+        }
+
+        if ($('.thm__owl-carousel').length) {
+            $('.thm__owl-carousel').each(function () {
+                var Self = $(this);
+                var carouselOptions = Self.data('options');
+                var carouselPrevSelector = Self.data('carousel-prev-btn');
+                var carouselNextSelector = Self.data('carousel-next-btn');
+                var thmCarousel = Self.owlCarousel(carouselOptions);
+                if (carouselPrevSelector !== undefined) {
+                    $(carouselPrevSelector).on('click', function () {
+                        thmCarousel.trigger('prev.owl.carousel');
+                        return false;
+                    });
+                }
+                if (carouselNextSelector !== undefined) {
+                    $(carouselNextSelector).on('click', function () {
+                        thmCarousel.trigger('next.owl.carousel');
+                        return false;
+                    });
+                }
+            });
+        }
+    });
 })(jQuery);
