@@ -54,7 +54,7 @@
                 },
  
                 bullets: {
-                    enable: true,
+                    enable: false,
                     style: 'hermes',
                     tmp: '<span class="tp-bullet-inner"></span>',
                     hide_onleave: false,
