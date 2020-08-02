@@ -26,26 +26,15 @@
     }
 
     function setVal() {
-        document.getElementById("fade").style.animationDuration = null;
-        document.getElementById("fade").style.animationName = null;
-        document.getElementById("button").disabled = false;
-        document.getElementById("button").style.cursor = "pointer";
-        document.getElementById("button").style.backgroundColor = "#ff6868";
-        document.getElementById("button").style.borderColor = "#ff6868";
-
-
-
+        document.getElementById("coupon").style.animationDuration = null;
+        document.getElementById("coupon").style.animationName = null;
     }
 
     function print() {
 
-        document.getElementById("fade").style.animationName = "fadeIn";
-        document.getElementById("fade").style.animationDuration = "1s";
-        document.getElementById("fade").innerHTML = (codeGen());
-        document.getElementById("button").disabled = true;
-        document.getElementById("button").style.backgroundColor = "#ffa8a8";
-        document.getElementById("button").style.borderColor = "#ffa8a8";
-        document.getElementById("button").style.cursor = "not-allowed";
+        document.getElementById("coupon").style.animationName = "fadeIn";
+        document.getElementById("coupon").style.animationDuration = "1s";
+        document.getElementById("coupon").innerHTML = (codeGen());
         setTimeout(setVal, 2000);
     }
 
