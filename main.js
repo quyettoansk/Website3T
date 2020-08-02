@@ -30,7 +30,7 @@
         document.getElementById("coupon").style.animationName = null;
     }
 
-    function printCoupon() {
+    $('#getCoupon').click(function(){
 
         document.getElementById("coupon").style.animationName = "fadeIn";
         document.getElementById("coupon").style.animationDuration = "1s";
