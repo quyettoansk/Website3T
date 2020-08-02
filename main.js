@@ -19,10 +19,8 @@
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901234567890987654321"
         for (i = 0; i < 7; i++) {
             code += possible.charAt(Math.round(Math.random() * possible.length));
-
         }
         return code;
-
     }
 
     function setVal() {
@@ -30,13 +28,12 @@
         document.getElementById("coupon").style.animationName = null;
     }
 
-    $('#getCoupon').click(function(){
-
+    $('#getCoupon').click(function() {
         document.getElementById("coupon").style.animationName = "fadeIn";
         document.getElementById("coupon").style.animationDuration = "1s";
         document.getElementById("coupon").innerHTML = (codeGen());
         setTimeout(setVal, 2000);
-    }
+    });
 
 
     /*==================================================================
