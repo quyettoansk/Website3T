@@ -2,7 +2,7 @@
     "use strict";
 
     /*==================================================================
-    [ Popup share social ]*/
+    [ Anisto - Popup share social ]*/
     $('.share').click(function() {
         var NWin = window.open($(this).prop('href'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
         if (window.focus) {
@@ -10,6 +10,45 @@
         }
         return false;
     });
+
+    /*==================================================================
+    [ Anisto - Random general code ]*/
+
+    function codeGen() {
+        var code = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901234567890987654321"
+        for (i = 0; i < 7; i++) {
+            code += possible.charAt(Math.round(Math.random() * possible.length));
+
+        }
+        return code;
+
+    }
+
+    function setVal() {
+        document.getElementById("fade").style.animationDuration = null;
+        document.getElementById("fade").style.animationName = null;
+        document.getElementById("button").disabled = false;
+        document.getElementById("button").style.cursor = "pointer";
+        document.getElementById("button").style.backgroundColor = "#ff6868";
+        document.getElementById("button").style.borderColor = "#ff6868";
+
+
+
+    }
+
+    function print() {
+
+        document.getElementById("fade").style.animationName = "fadeIn";
+        document.getElementById("fade").style.animationDuration = "1s";
+        document.getElementById("fade").innerHTML = (codeGen());
+        document.getElementById("button").disabled = true;
+        document.getElementById("button").style.backgroundColor = "#ffa8a8";
+        document.getElementById("button").style.borderColor = "#ffa8a8";
+        document.getElementById("button").style.cursor = "not-allowed";
+        setTimeout(setVal, 2000);
+    }
+
 
     /*==================================================================
     [ Load page ]*/
