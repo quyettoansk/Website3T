@@ -2,41 +2,6 @@
     "use strict";
 
     /*==================================================================
-    [ Anisto - Popup share social ]*/
-    $('.share').click(function() {
-        var NWin = window.open($(this).prop('href'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
-        if (window.focus) {
-            NWin.focus();
-        }
-        return false;
-    });
-
-    /*==================================================================
-    [ Anisto - Random general code ]*/
-
-    function codeGen() {
-        var code = "";
-        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901234567890987654321"
-        for (i = 0; i < 7; i++) {
-            code += possible.charAt(Math.round(Math.random() * possible.length));
-        }
-        return code;
-    }
-
-    function setVal() {
-        document.getElementById("coupon").style.animationDuration = null;
-        document.getElementById("coupon").style.animationName = null;
-    }
-
-    $('.getCoupon').click(function() {
-        document.getElementById("coupon").style.animationName = "fadeIn";
-        document.getElementById("coupon").style.animationDuration = "1s";
-        document.getElementById("coupon").innerHTML = (codeGen());
-        setTimeout(setVal, 2000);
-    });
-
-
-    /*==================================================================
     [ Load page ]*/
     $(".animsition").animsition({
         inClass: 'fade-in',
@@ -328,5 +293,39 @@
                 }
             });
         }
+    });
+    
+    /*==================================================================
+    [ Anisto - Popup share social ]*/
+    $('.share').click(function() {
+        var NWin = window.open($(this).prop('href'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+        if (window.focus) {
+            NWin.focus();
+        }
+        return false;
+    });
+
+    /*==================================================================
+    [ Anisto - Random general code ]*/
+
+    function codeGen() {
+        var code = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901234567890987654321"
+        for (i = 0; i < 7; i++) {
+            code += possible.charAt(Math.round(Math.random() * possible.length));
+        }
+        return code;
+    }
+
+    function setVal() {
+        document.getElementById("coupon").style.animationDuration = null;
+        document.getElementById("coupon").style.animationName = null;
+    }
+
+    $('.getCoupon').click(function() {
+        document.getElementById("coupon").style.animationName = "fadeIn";
+        document.getElementById("coupon").style.animationDuration = "1s";
+        document.getElementById("coupon").innerHTML = (codeGen());
+        setTimeout(setVal, 2000);
     });
 })(jQuery);
