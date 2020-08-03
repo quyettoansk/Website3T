@@ -28,7 +28,7 @@
         document.getElementById("coupon").style.animationName = null;
     }
 
-    $('#getCoupon').click(function() {
+    $('.getCoupon').click(function() {
         document.getElementById("coupon").style.animationName = "fadeIn";
         document.getElementById("coupon").style.animationDuration = "1s";
         document.getElementById("coupon").innerHTML = (codeGen());
