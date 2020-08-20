@@ -362,4 +362,7 @@
         }
     }
     $('#counter').countdown(target.valueOf(), callback);
+    // Xuat thang uu dai module Price
+    var d = new Date();
+    document.getElementById("month").innerHTML = (d.getMonth() + 1).toString().padStart(2, "0");;
 })(jQuery);
